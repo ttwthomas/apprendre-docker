@@ -1,6 +1,7 @@
 version: "3"
 services:
   monapp:
+    build: .
     image: monimage
     depends_on:
       - redis
@@ -12,8 +13,6 @@ services:
       - NOM=les amis
   redis:
     image: redis
-    ports:
-      - "6379:6379"
     networks:
       - monreseau
 
